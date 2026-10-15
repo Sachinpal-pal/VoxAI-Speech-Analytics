@@ -137,7 +137,7 @@ def process_advanced_audio(file, transcript_text):
         tmp.write(file.read())
         tmp_path = tmp.name
 
-    y, sr = librosa.load(tmp_path, sr=None)
+    y, sr = librosa.load(tmp_path, sr=22050)
     duration = librosa.get_duration(y=y, sr=sr)
     os.remove(tmp_path)
 
